@@ -87,7 +87,7 @@ end
 veryShort_powCont_dB = 20*log10(veryShort_powCont);
 
 % Find peaks in power contour
-[peak_idx,peak_pow]=findpeaks(veryShort_powCont_dB);
+[peak_pow,peak_idx]=findpeaks(veryShort_powCont_dB',["DoubleSided"]);
 
 for n=1:length(peak_pow)
     
