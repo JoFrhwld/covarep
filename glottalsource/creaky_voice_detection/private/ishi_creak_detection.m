@@ -85,9 +85,10 @@ while finish <= length(x_filt)
 end
 
 veryShort_powCont_dB = 20*log10(veryShort_powCont);
-
+jawn = veryShort_powCont_dB + abs(min(veryShort_powCont_dB));
 % Find peaks in power contour
-[peak_pow,peak_idx]=findpeaks(veryShort_powCont_dB',["DoubleSided"]);
+[junk,peak_idx]=findpeaks(jawn');
+peak_pow = veryShort_powCont_dB(peak_idx);
 
 for n=1:length(peak_pow)
     
