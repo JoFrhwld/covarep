@@ -74,6 +74,9 @@ res = lpcresidual(x,round(25/1000*fs),round(5/1000*fs),round(fs/1000)+2);
 
 % For fave, since I know Im passing it vowels
 if any(VUV == 1)
+  if all(f0(VUV==1)>F0max)
+  	f0 = f0/2;
+  end
 	F0mean=median(f0(VUV==1&f0>F0min&f0<F0max));
 else
 	F0mean=median(f0(f0>F0min&f0<F0max))
