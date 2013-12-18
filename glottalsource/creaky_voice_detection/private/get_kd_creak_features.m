@@ -67,7 +67,7 @@ function [H2H1,res_p,ZCR,F0,F0mean,enerN,pow_std,creakF0] = get_kd_creak_feature
 
 %% Initial settings
 F0min=20;
-F0max=500;
+F0max=600;
 winShift=round(10/1000*fs); % Sample every 10 ms
 res = lpcresidual(x,round(25/1000*fs),round(5/1000*fs),round(fs/1000)+2);
 [f0,VUV] = pitch_srh(x,fs,F0min,F0max,10);
