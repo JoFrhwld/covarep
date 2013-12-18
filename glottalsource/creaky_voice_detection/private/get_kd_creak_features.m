@@ -71,7 +71,13 @@ F0max=500;
 winShift=round(10/1000*fs); % Sample every 10 ms
 res = lpcresidual(x,round(25/1000*fs),round(5/1000*fs),round(fs/1000)+2);
 [f0,VUV] = pitch_srh(x,fs,F0min,F0max,10);
-F0mean=median(f0(VUV==1&f0>F0min&f0<F0max));
+
+% For fave, since I know Im passing it vowels
+if any(VUV == 1)
+	F0mean=median(f0(VUV==1&f0>F0min&f0<F0max));
+else
+	F0mean=median(f0(f0>F0min&f0<F0max))
+end
 
 %% Extract features for creak detection
 time=winShift:winShift:length(x);
