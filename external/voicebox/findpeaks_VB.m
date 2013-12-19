@@ -1,4 +1,4 @@
-function [k,v]=findpeaks(x,m,w)
+function [k,v]=findpeaks_VB(x,m,w)
 %FINDPEAKS finds peaks with optional quadratic interpolation [K,V]=(X,M,W)
 %
 %  Inputs:  X        is the input signal (does not work with UInt datatype)
@@ -43,6 +43,11 @@ function [k,v]=findpeaks(x,m,w)
 %   http://www.gnu.org/copyleft/gpl.html or by writing to
 %   Free Software Foundation, Inc.,675 Mass Ave, Cambridge, MA 02139, USA.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% NOTE THAT THIS FILENAME HAS BEEN CHANGED FROM findpeaks.m TO
+% findpeaks_VB.m BY JOHN KANE FOR THE COVAREP RESPOSITORY TO AVOID
+% OVERLOADING WITH THE EXISTING INBUILT findpeaks.m MATLAB FUNCTION
 
 if nargin<2
     m=' ';
