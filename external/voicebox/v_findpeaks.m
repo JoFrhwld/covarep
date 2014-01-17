@@ -1,5 +1,5 @@
-function [k,v]=findpeaks(x,m,w)
-%FINDPEAKS finds peaks with optional quadratic interpolation [K,V]=(X,M,W)
+function [k,v]=v_findpeaks(x,m,w)
+%V_FINDPEAKS finds peaks with optional quadratic interpolation [K,V]=(X,M,W)
 %
 %  Inputs:  X        is the input signal (does not work with UInt datatype)
 %           M        is mode:
@@ -23,7 +23,7 @@ function [k,v]=findpeaks(x,m,w)
 %
 
 %	   Copyright (C) Mike Brookes 2005
-%      Version: $Id: findpeaks.m,v 1.5 2010/10/28 10:41:16 dmb Exp $
+%      Version: $Id: v_findpeaks.m 3601 2013-10-11 15:27:30Z dmb $
 %
 %   VOICEBOX is a MATLAB toolbox for speech processing.
 %   Home page: http://www.ee.ic.ac.uk/hp/staff/dmb/voicebox/voicebox.html
@@ -57,7 +57,7 @@ dx=x(2:end)-x(1:end-1);
 r=find(dx>0);
 f=find(dx<0);
 
-if length(r)>0 && length(f)>0    % we must have at least one rise and one fall
+if length(r)>0 & length(f)>0    % we must have at least one rise and one fall
     dr=r;
     dr(2:end)=r(2:end)-r(1:end-1);
     rc=repmat(1,nx,1);
